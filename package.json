@@ -13,8 +13,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "docker-compose up -d --build",
-    "dev:stop": "docker-compose stop",
+    "dev:stop": "docker-compose down",
     "prod": "docker-compose -f docker-compose-prod.yml up -d --build", 
-    "prod:stop": "docker-compose -f docker-compose-prod.yml stop"
+    "prod:stop": "docker-compose -f docker-compose-prod.yml down"
   }
 }
