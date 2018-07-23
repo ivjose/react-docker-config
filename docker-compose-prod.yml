@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 services:
   prod-build:
     build:
@@ -6,10 +6,12 @@ services:
       dockerfile: Dockerfile-prod
     container_name: prod-build
     restart: always
+    env_file:
+      - .env
+    ports:
+      - 8080:80
     volumes:
       - '.:/usr/src/app'
       - '/usr/src/app/node_modules'
-    ports:
-      - '8080:80'
     environment:
       - NODE_ENV=production
